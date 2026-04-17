@@ -1,0 +1,351 @@
+ /*---------Root Variables-----------  */
+:root {
+
+    --bg-main: #0a192f;
+    --bg-card: #112240;
+    --bg-glass: rgba(255, 255, 255, 0.05);
+    --primary: #00ffd5;
+    --primary-dark: #00bfa6;
+    --secondary: #0ef;
+    --text-main: #ffffff;
+    --text-muted: #8892b0;
+    --border-color: rgba(0, 255, 213, 0.3);
+    --glow: 0 0 10px rgba(0, 255, 213, 0.5);
+}
+
+/*-------------body------------------- */
+/* body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', sans-serif;
+} */
+a
+body{
+    background-image:url("https://static.vecteezy.com/system/resources/thumbnails/020/411/854/small/healthcare-heart-shape-with-blue-cardio-pulse-heartbeat-lone-medical-abstract-background-modern-simple-design-icon-sign-or-logo-design-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0%;
+    min-height: 100vh;
+    background-position: center;
+}
+
+
+
+/* -----------navbar------------------ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dashboardname{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* -------------button------------------ */
+button {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: var(--glow);
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/*---------container-----------*/
+.container {
+    padding: 30px;
+}
+
+/* -------i nputs----------- */
+input, select {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+}
+
+/*----------card------------*/
+.card {
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow);
+}
+
+/*---------head--------------- */
+h3 {
+    color: var(--primary);
+}
+
+/*---------text---------------- */
+p {
+    color: var(--text-muted);
+}
+
+/*-----disablebutton---------*/
+button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* --------slot model--------- */
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:#1e1e2f;
+color:white;
+padding:20px;
+border-radius:12px;
+width:300px;
+max-height:80vh;
+overflow-y:auto;
+}
+
+.close{
+cursor:pointer;
+float:right;
+font-size:20px;
+}
+
+
+.slot-card.booked{
+background:#555;
+opacity:0.6;
+}
+
+.slot-card.booked button{
+background:#999;
+cursor:not-allowed;
+}
+
+.slot-card{
+    background:#1f2a44;
+    padding:10px;
+    border-radius:8px;
+    text-align:center;
+    min-width:80px;
+}
+
+.slot-card button{
+    margin-top:5px;
+    padding:5px 10px;
+    border:none;
+    background:#00ffd5;
+    color:black;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+#doctorList .card div[id^="slots-"] {
+    margin-top: 10px;
+}
+
+/* toast messgae  */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #112240;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #00ffd5;
+    box-shadow: 0 0 10px rgba(0,255,213,0.5);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* variants */
+.toast.success { border-left-color: #00ff88; }
+.toast.error { border-left-color: #ff4d4d; }
+.toast.info { border-left-color: #0ef; }
+
+.calendar {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.date-btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    background: #00ffd5;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.date-btn:hover {
+    background: #00bfa6;
+}
+
+
+/* MOBILE */
+ @media (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    /* BUTTONS */
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 90%;
+        text-align: center;
+    }
+
+    /* STATS */
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* CONTAINER */
+    .container {
+        padding: 10px;
+    }
+
+    /* CARD */
+    .card {
+        margin: 10px 0;
+    }
+
+    /* INPUT */
+    input, select {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    /* CALENDAR */
+    .calendar {
+        justify-content: center;
+    }
+
+    .date-btn {
+        flex: 1 1 45%;
+    }
+}
+
+
+/* TABLET */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .stats {
+        gap: 25px;
+    }
+
+    /* Cards in 2 columns */
+    #doctorList {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 1025px) {
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    /* 3–4 cards automatically */
+    #doctorList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+}

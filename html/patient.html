@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="../Styles/dashboard.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class ="dashboardname">Patient Dashboard</div>
+    <button onclick="logout()">Logout</button>
+</nav>
+
+<div class="container">
+
+   <input type="text" id="searchName" placeholder="Search doctor...">
+<select id="specialtyDropdown"></select>
+ 
+
+    <button onclick="loadDoctors()">View Doctors</button>
+    <button onclick="loadMyAppointments()">My Appointments</button>
+
+    <div id="appointments"></div>
+    <div id="doctorList"></div>
+
+</div>
+
+<script src="../Scripts/utils.js" defer></script>
+<script src ="../Scripts/search.js" defer></script>
+<script src ="../Scripts/slotandinfo.js" defer></script>
+<script src = "../Scripts/appointment.js" defer></script>
+<script src="../Scripts/patientwindow.js" defer></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+    checkAuth();
+    checkRole("USER");
+      loadDoctors();
+    });
+</script>
+
+
+<div id ="toast" class ="toast">
+
+</div>
+</body>
+</html>

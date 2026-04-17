@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="../Styles/auth.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Register</h2>
+
+   <h3>Doctor Register</h3>
+
+<input type="text" id="dname" placeholder="Name"><br>
+<input type="text" id="demail" placeholder="Email"><br>
+<input type="password" id="dpassword" placeholder="Password"><br>
+
+<input type="text" id="specialty" placeholder="Specialty"><br>
+<input type="number" id="experience" placeholder="Experience"><br>
+
+<button onclick="registerDoctor()">Register as Doctor</button>
+<br><br>
+    <hr>
+
+    <h3>User Register</h3>
+
+
+<input type="text" id="name" placeholder="Name"><br>
+<input type="text" id="email" placeholder="Email"><br>
+<input type="password" id="password" placeholder="Password"><br>
+
+    <button onclick="registerUser()">Register as User</button>
+
+</div>
+
+<script src = ../Scripts/utils.js></script>
+<script src="../Scripts/auth.js"></script>
+
+<div id="toast" class="toast"></div>
+</body>
+</html>

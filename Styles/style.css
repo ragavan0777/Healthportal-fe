@@ -1,0 +1,143 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+
+    /* BACKGROUND */
+    --bg-main: #0a192f;
+    --bg-card: #112240;
+    --bg-glass: rgba(255, 255, 255, 0.05);
+
+    /* PRIMARY COLORS */
+    --primary: #00ffd5;
+    --primary-dark: #00bfa6;
+    --secondary: #0ef;
+
+    /* TEXT */
+    --text-main: #ffffff;
+    --text-muted: #8892b0;
+
+    /* BORDER */
+    --border-color: rgba(0, 255, 213, 0.3);
+
+    /* EFFECTS */
+    --glow: 0 0 10px rgba(0, 255, 213, 0.5);
+}
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text-main);
+    border: 1px solid var(--primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.nav-links a:hover {
+    background: var(--primary);
+    color: black;
+}
+
+/* ================= HERO ================= */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* TAG */
+.tag {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* TITLE */
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+/* DESCRIPTION */
+.hero p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+/* ================= BUTTONS ================= */
+.buttons {
+    margin-bottom: 50px;
+}
+
+.btn {
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: black;
+    box-shadow: var(--glow);
+}
+
+.secondary {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.secondary:hover {
+    background: var(--primary);
+    color: black;
+}
+
+/* ================= STATS ================= */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.stats h2 {
+    color: var(--primary);
+}
+
+.stats p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
