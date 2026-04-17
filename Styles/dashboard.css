@@ -13,13 +13,6 @@
     --glow: 0 0 10px rgba(0, 255, 213, 0.5);
 }
 
-/*-------------body------------------- */
-/* body {
-    background: var(--bg-main);
-    color: var(--text-main);
-    font-family: 'Segoe UI', sans-serif;
-} */
-a
 body{
     background-image:url("https://static.vecteezy.com/system/resources/thumbnails/020/411/854/small/healthcare-heart-shape-with-blue-cardio-pulse-heartbeat-lone-medical-abstract-background-modern-simple-design-icon-sign-or-logo-design-vector.jpg");
     background-repeat: no-repeat;

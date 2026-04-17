@@ -1,4 +1,4 @@
-/* ================= ROOT VARIABLES ================= */
+/*  ROOT VARIABLES  */
 :root {
 
     /* BACKGROUND */
@@ -22,7 +22,7 @@
     --glow: 0 0 10px rgba(0, 255, 213, 0.5);
 }
 
-/* ================= RESET ================= */
+/* RESET  */
 * {
     margin: 0;
     padding: 0;
@@ -30,13 +30,13 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* ================= BODY ================= */
+/*  BODY */
 body {
     background: var(--bg-main);
     color: var(--text-main);
 }
 
-/* ================= NAVBAR ================= */
+/*  NAVBAR  */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -66,7 +66,7 @@ body {
     color: black;
 }
 
-/* ================= HERO ================= */
+/*  HERO  */
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -97,7 +97,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* ================= BUTTONS ================= */
+/*  BUTTONS */
 .buttons {
     margin-bottom: 50px;
 }
@@ -126,7 +126,7 @@ body {
     color: black;
 }
 
-/* ================= STATS ================= */
+/*  STATS  */
 .stats {
     display: flex;
     justify-content: center;

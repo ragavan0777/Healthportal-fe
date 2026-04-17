@@ -4,10 +4,10 @@ const doctorId = localStorage.getItem("userId");
 console.log("Doctor ID:", doctorId);
 
 
-// FIX: doctorId not needed anymore
+//  doctorId not needed anymore
 function loadDoctorAppointments(){
 
-fetch(`http://localhost:2000/api/doctor/${doctorId}`,{ // FIX: dummy id
+fetch(`http://localhost:2000/api/doctor/${doctorId}`,{ 
 headers:{
 "Authorization":"Bearer "+localStorage.getItem("token")
 }
@@ -73,7 +73,7 @@ headers:{
 }
 })
 .then(()=>{
-console.log("Appointment APPROVED:", id); // FIX
+console.log("Appointment APPROVED:", id); 
 loadDoctorAppointments();
 });
 }
@@ -86,7 +86,7 @@ headers:{
 }
 })
 .then(()=>{
-console.log("Appointment REJECTED:", id); // FIX
+console.log("Appointment REJECTED:", id); 
 loadDoctorAppointments();
 });
 }

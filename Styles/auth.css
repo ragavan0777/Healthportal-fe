@@ -17,18 +17,6 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* body{
-    background-image: url("https://img.freepik.com/free-vector/medical-shield-protection-with-cardiograph-heartbeat-lines_1017-36969.jpg?t=st=1775538002~exp=1775541602~hmac=de200cfedf5a2d63ec284bf37d3175ca03aea7a835319aee3cb63134d0c491ea&w=1480");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    z-index:10;
-    background-attachment: fixed;
-    min-height:100vh;
-    margin: 0%;
-
-} */
-
 /* CONTAINER */
 .auth-container {
     width: 400px;
