@@ -1,3 +1,4 @@
+const BASE_URL ="https://healthportal-be-1.onrender.com";
 function getDateOptions(){
     let dates = [];
     let today = new Date();
@@ -53,7 +54,7 @@ function loadSlots(doctorId, selectedDate){
 
 if(!selectedDate) return;
 
-fetch(`http://localhost:2000/api/slots/${doctorId}/${selectedDate}`,{
+fetch(`${BASE_URL}/api/slots/${doctorId}/${selectedDate}`,{
 headers:{
 "Authorization":"Bearer "+localStorage.getItem("token")
 }
@@ -110,7 +111,7 @@ if(div.style.display === "block"){
 }
 
 // FETCH DOCTOR INFO
-fetch(`http://localhost:2000/api/doctor/public/${doctorId}`,{
+fetch(`${BASE_URL}/api/doctor/public/${doctorId}`,{
 headers:{
 "Authorization":"Bearer "+localStorage.getItem("token")
 }

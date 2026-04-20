@@ -2,12 +2,11 @@
 
 // REGISTERATION
 
-
-
+const BASE_URL ="https://healthportal-be-1.onrender.com";
 // USER RSGISTER
 function registerUser(){
 
-fetch(`http://localhost:2000/api/auth/register`,{
+fetch(`${BASE_URL}/api/auth/register`,{
 method:"POST",
 headers:{
 "Content-Type":"application/json"
@@ -41,7 +40,7 @@ showToast("failed in User registration","Error");
 // DOCTOR REGISTER
 function registerDoctor(){
 
-fetch(`http://localhost:2000/api/auth/register-doctor`,{
+fetch(`${BASE_URL}/api/auth/register-doctor`,{
 method:"POST",
 headers:{
     "Content-Type":"application/json"
@@ -76,42 +75,58 @@ body:JSON.stringify({
 function login(){
 
     localStorage.clear();
-fetch(`http://localhost:2000/api/auth/login`,{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-email:document.getElementById("email").value,
-password:document.getElementById("password").value
-})
-})
-.then(res=>res.text())
-.then(token=>{
 
-localStorage.setItem("token",token);
+    fetch(`${BASE_URL}/api/auth/login`,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            email:document.getElementById("email").value,
+            password:document.getElementById("password").value
+        })
+    })
 
-const payload = parseJwt(token);
+    .then(res => {
+        if(!res.ok){
+            throw new Error("Invalid credentials or server error");
+        }
+        return res.text();
+    })
 
-console.log("Login successfull---");
-console.log("ROLE:", payload.role);
+    .then(token => {
 
-// SAVE DATA
-localStorage.setItem("userId", payload.userId);
-localStorage.setItem("role", payload.role);
+        if(!token || token.length < 10){
+            throw new Error("Invalid token received");
+        }
 
-showToast("Login Success");
+        localStorage.setItem("token", token);
 
-if(payload.role === "DOCTOR"){
-    window.location.href = "doctor.html";  
-        console.log("doctor login successfull...");
-}else{
-    window.location.href = "patient.html";
-    console.log("patient login successfull...");
+        const payload = parseJwt(token);
 
-}
+        if(!payload){
+            throw new Error("Token parsing failed");
+        }
 
-})
-.catch(err=>console.error(err));
+        console.log("Login successful");
+        console.log("ROLE:", payload.role);
 
+        localStorage.setItem("userId", payload.userId);
+        localStorage.setItem("role", payload.role);
+
+        showToast("Login Success", "success");
+
+       
+        if(payload.role === "DOCTOR"){
+            window.location.href = "doctor.html";  
+        } else {
+            window.location.href = "patient.html";
+        }
+
+    })
+
+    .catch(err => {
+        console.error(err);
+        showToast("Login failed. Check credentials or server.", "error");
+    });
 }

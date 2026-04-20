@@ -1,3 +1,6 @@
+const BASE_URL ="https://healthportal-be-1.onrender.com";
+// DOCTOR APPOINTMENTS
+
 // ENTER KEY SEARCH
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -34,7 +37,7 @@ if(specialty !== ""){
 console.log("Searching:", name, specialty);
 
 
-fetch(`http://localhost:2000/api/doctor/search?name=${name}&specialty=${specialty}`,{
+fetch(`${BASE_URL}/api/doctor/search?name=${name}&specialty=${specialty}`,{
     headers:{
         "Authorization":"Bearer "+localStorage.getItem("token")
     }
@@ -70,7 +73,7 @@ function loadDoctors(){
 
     
 
-fetch("http://localhost:2000/api/doctor/getall",{
+fetch(`${BASE_URL}/api/doctor/getall`,{
     headers:{
         "Authorization":"Bearer "+localStorage.getItem("token"),
         "Content-Type":"application/json"

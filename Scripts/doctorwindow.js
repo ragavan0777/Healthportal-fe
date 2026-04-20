@@ -1,3 +1,5 @@
+ 
+const BASE_URL ="https://healthportal-be-1.onrender.com";
 // DOCTOR APPOINTMENTS
 
 const doctorId = localStorage.getItem("userId");
@@ -7,7 +9,7 @@ console.log("Doctor ID:", doctorId);
 //  doctorId not needed anymore
 function loadDoctorAppointments(){
 
-fetch(`http://localhost:2000/api/doctor/${doctorId}`,{ 
+fetch(`${BASE_URL}/api/doctor/${doctorId}`,{ 
 headers:{
 "Authorization":"Bearer "+localStorage.getItem("token")
 }
@@ -66,7 +68,7 @@ document.getElementById("appointments").innerHTML = html;
 // approve
 
 function approve(id){
-fetch(`http://localhost:2000/api/appointments/approve/${id}`,{
+fetch(`${BASE_URL}/api/appointments/approve/${id}`,{
 method:"PUT",
 headers:{
 "Authorization":"Bearer "+localStorage.getItem("token")
@@ -79,7 +81,7 @@ loadDoctorAppointments();
 }
 
 function reject(id){
-fetch(`http://localhost:2000/api/appointments/reject/${id}`,{
+fetch(`${BASE_URL}/api/appointments/reject/${id}`,{
 method:"PUT",
 headers:{
 "Authorization":"Bearer "+localStorage.getItem("token")
@@ -92,7 +94,7 @@ loadDoctorAppointments();
 }
 
 function complete(id){
-fetch(`http://localhost:2000/api/appointments/completed/${id}`,{
+fetch(`${BASE_URL}/api/appointments/completed/${id}`,{
 method:"PUT",
 headers:{
 "Authorization":"Bearer "+localStorage.getItem("token")

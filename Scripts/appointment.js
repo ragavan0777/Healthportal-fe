@@ -1,3 +1,5 @@
+const BASE_URL ="https://healthportal-be-1.onrender.com";
+
 // BOOKING AN APPOINTMENT
 function bookAppointment(slotId, selectedDate){
 
@@ -8,7 +10,7 @@ function bookAppointment(slotId, selectedDate){
         btn.disabled = true;
     }
 
-    fetch(`http://localhost:2000/api/appointments/book-slot?slotId=${slotId}&date=${selectedDate}`,{
+    fetch(`${BASE_URL}/api/appointments/book-slot?slotId=${slotId}&date=${selectedDate}`,{
         method:"POST",
         headers:{
             "Authorization":"Bearer "+localStorage.getItem("token")
@@ -63,7 +65,7 @@ if(!container){
 const patientId = localStorage.getItem("userId");
 
 
-fetch(`http://localhost:2000/api/patient/appointments/${patientId}`,{
+fetch(`${BASE_URL}/api/patient/appointments/${patientId}`,{
 headers:{
 "Authorization":"Bearer "+localStorage.getItem("token")
 }
