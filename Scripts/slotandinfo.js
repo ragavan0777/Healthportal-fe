@@ -1,4 +1,4 @@
-const BASE_URL ="https://healthportal-be-1.onrender.com";
+var BASE_URL ="https://healthportal-be-1.onrender.com";
 function getDateOptions(){
     let dates = [];
     let today = new Date();
